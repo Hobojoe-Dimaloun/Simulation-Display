@@ -6,14 +6,13 @@
 **************************************
 * Change History
 **************************************/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <errno.h>
 #include <string.h>
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
+//#include <SDL2/SDL_image.h>
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 800;
@@ -195,12 +194,12 @@ bool init()
 				SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
 
 				//Initialize PNG loading
-				int imgFlags = IMG_INIT_PNG;
+				/*int imgFlags = IMG_INIT_PNG;
 				if( !( IMG_Init( imgFlags ) & imgFlags ) )
 				{
 					printf( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() );
 					success = false;
-				}
+				}*/
 			}
 		}
 	}
@@ -217,6 +216,6 @@ static void close()
 	gRenderer = NULL;
 
 	//Quit SDL subsystems
-	IMG_Quit();
+	//IMG_Quit();
 	SDL_Quit();
 }
