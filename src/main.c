@@ -103,9 +103,9 @@ int main(int argc,char **argv)
             fscanf(output,"%d",&ising_lattice[i]);
         }
         int sum ;
-        fscanf(output,"%d",&sum);
+        //fscanf(output,"%d",&sum);
 
-        printf( "Magnetisation %d\n",sum);
+        //printf( "Magnetisation %d\n",sum);
 
 
 
@@ -140,9 +140,13 @@ void screenRenderfunc(int *v, int x, int y)
             {
                 SDL_SetRenderDrawColor( gRenderer, 0xFF, 0x00, 0x00, 0xFF );
             }
-            else
+            else if (v[i*x +j] == -1)
             {
                 SDL_SetRenderDrawColor( gRenderer, 0x00, 0xFF, 0x00, 0xFF );
+            }
+            else
+            {
+                SDL_SetRenderDrawColor( gRenderer, 0x00, 0x00, 0x00, 0xFF );
             }
             SDL_RenderFillRect( gRenderer, &fillRect );
 
